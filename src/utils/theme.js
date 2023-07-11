@@ -1,12 +1,4 @@
-import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
-
-export const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["Helvetica", "Arial", "sans-serif"],
-});
 
 const theme = createTheme({
   palette: {
@@ -19,9 +11,20 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: "SF Pro Display, sans-serif",
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        @font-face {
+          font-family: 'SF Pro Display';
+          src: url('/fonts/SFProDisplay-Regular.ttf') format('ttf'),
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+      `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {
