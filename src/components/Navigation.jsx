@@ -143,7 +143,7 @@ export default function Navigation() {
 
             <Link href="/">
               <Image
-                src="/icons/logoDevend.svg"
+                src="/icons/LogoDevend.svg"
                 alt="Logo"
                 width={135}
                 height={39}
