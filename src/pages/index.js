@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Section id="banner" name="banner" fullHeight>
+        <Section id="banner" name="banner" backgroundColor="#d9d9d9" fullHeight>
           <Box
             sx={{
               display: "grid",
@@ -40,16 +40,12 @@ export default function Home() {
             >
               Protegemos lo que más te importa
             </Typography>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{ width: "max-content" }}
-            >
+            <Button variant="contained" size="large">
               Contáctanos
             </Button>
           </Box>
         </Section>
-        <Section id="about-us" name="about">
+        <Section id="about-us" name="about-us">
           <Box
             display="grid"
             gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
@@ -78,11 +74,7 @@ export default function Home() {
                 capacitados tiene amplia experiencia en la instalación y
                 mantenimiento de sistemas de seguridad avanzados.
               </Typography>
-              <Button
-                variant="contained"
-                size="large"
-                sx={{ width: "max-content", borderRadius: "0" }}
-              >
+              <Button variant="contained" size="large">
                 Contáctanos
               </Button>
             </Grid>
@@ -102,7 +94,7 @@ export default function Home() {
             </Box>
           </Box>
         </Section>
-        <Section id="services" name="services" background="primary.main">
+        <Section id="services" name="services" backgroundColor="primary.main">
           <Box display="grid" gap="40px">
             <Grid textAlign="center" display="grid" gap="10px">
               <Typography
@@ -128,9 +120,9 @@ export default function Home() {
             </Grid>
             <Grid
               display="grid"
-              gridTemplateColumns={{ xs: "1fr", md: "repeat(3, 1fr)" }}
+              gridTemplateColumns={{ xs: "1fr", sm: "repeat(3, 1fr)" }}
               gap={{ xs: "15px", md: "30px" }}
-              padding={{ xs: "0 20px", sm: "0 80px" }}
+              padding={{ xs: "0 20px", sm: "0" }}
             >
               {serviceData.map(({ title, description, Icon }) => {
                 return (
