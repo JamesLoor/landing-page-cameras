@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -29,10 +29,19 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
+          borderRadius: "0",
+          maxWidth: "max-content",
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: "0",
         },
       },
     },
   },
 });
 
-export default theme;
+export default responsiveFontSizes(theme);
