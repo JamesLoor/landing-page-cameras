@@ -103,8 +103,8 @@ export default function Home() {
           </Box>
         </Section>
         <Section id="services" name="services" background="primary.main">
-          <Box display="grid" gap="20px">
-            <Grid textAlign="center">
+          <Box display="grid" gap="40px">
+            <Grid textAlign="center" display="grid" gap="10px">
               <Typography
                 component="h2"
                 variant="h3"
