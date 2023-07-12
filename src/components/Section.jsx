@@ -5,7 +5,7 @@ export default function Section({
   name,
   children,
   fullHeight = false,
-  background = "transparent",
+  backgroundColor = "transparent",
 }) {
   return (
     <Box
@@ -16,15 +16,18 @@ export default function Section({
         display: "grid",
         alignItems: "center",
         minHeight: fullHeight ? "calc(100vh)" : "400px",
-        padding: "50px 0",
-        bgcolor: background,
+        padding: "100px 0",
+        bgcolor: backgroundColor,
       }}
     >
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: "1fr",
+          width: "100%",
           padding: "0 20px",
+          maxWidth: "1260px",
+          margin: "0 auto",
         }}
       >
         {children}
