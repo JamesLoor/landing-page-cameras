@@ -88,7 +88,7 @@ export default function Navigation() {
       <Container
         maxWidth={false}
         disableGutters
-        sx={{ maxWidth: "1280px", padding: "0 20px" }}
+        sx={{ maxWidth: "1260px", padding: "0 20px" }}
       >
         <Box
           display="grid"
@@ -117,12 +117,17 @@ export default function Navigation() {
               </IconButton>
               <Menu
                 id="menu-appbar"
+                keepMounted
+                disableScrollLock
+                disablePortal
+                MenuListProps={{
+                  sx: { bgcolor: "primary.main", color: "white" },
+                }}
                 anchorEl={anchorElNav}
                 anchorOrigin={{
                   vertical: "bottom",
                   horizontal: "left",
                 }}
-                keepMounted
                 transformOrigin={{
                   vertical: "top",
                   horizontal: "left",
@@ -134,25 +139,38 @@ export default function Navigation() {
                 }}
               >
                 {sections.map(({ name, link, label }) => (
-                  <MenuItem key={name} href={link} LinkComponent={Link}>
-                    {label}
+                  <MenuItem
+                    key={name}
+                    onClick={handleCloseNavMenu}
+                    sx={{ padding: 0 }}
+                  >
+                    <Link
+                      href={link}
+                      style={{
+                        color: "white",
+                        padding: "6px 16px",
+                        width: "100%",
+                      }}
+                    >
+                      {label}
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
 
-            <Link href="/">
+            <Link href="/" style={{ display: "flex" }}>
               <Image
                 src="/icons/LogoDevend.svg"
                 alt="Logo"
-                width={135}
-                height={39}
+                width={120}
+                height={32}
               />
             </Link>
 
             <Box sx={{ display: { xs: "none", md: "flex" } }} gap="15px">
               {sections.map(({ name, link, label }) => (
-                <Link key={name} href={link} sx={{}}>
+                <Link key={name} href={link}>
                   <Button
                     key={name}
                     size="large"
