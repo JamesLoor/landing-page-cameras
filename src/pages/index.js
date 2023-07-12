@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import Section from "@/components/Section";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -42,9 +43,57 @@ export default function Home() {
           </Box>
         </Section>
         <Section id="about-us" name="about">
-          <Typography component="h2" variant="h3" fontWeight="600">
-            About Us
-          </Typography>
+          <Box
+            display="grid"
+            gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
+            alignItems="center"
+            gap={{ xs: "20px", md: "80px" }}
+          >
+            <Grid display="inherit" gap="20px">
+              <Grid display="inherit" gap="5px">
+                <Typography component="h3" variant="h6" fontWeight="500">
+                  Nosotros
+                </Typography>
+                <Typography component="h2" variant="h3" fontWeight="600">
+                  Somos expertos en seguridad: Su confianza, nuestra prioridad
+                </Typography>
+              </Grid>
+              <Typography
+                component="p"
+                fontSize="18px"
+                fontWeight="400"
+                lineHeight="2.3"
+                color="#9A9A9A"
+              >
+                Devend es líder en seguridad y vigilancia, ofreciendo soluciones
+                integrales y personalizadas para proteger hogares, negocios y
+                activos valiosos. Nuestro equipo de expertos altamente
+                capacitados tiene amplia experiencia en la instalación y
+                mantenimiento de sistemas de seguridad avanzados.
+              </Typography>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ width: "max-content", borderRadius: "0" }}
+              >
+                Contáctanos
+              </Button>
+            </Grid>
+            <Box height={{ xs: "100%", md: "500px", border: "2px solid #000" }}>
+              <Image
+                src="/images/about-us.jpg"
+                alt="Nosotros"
+                width={400}
+                height={400}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </Box>
+          </Box>
         </Section>
         <Section id="services" name="services">
           <Typography component="h2" variant="h3" fontWeight="600">
