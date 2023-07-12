@@ -3,6 +3,13 @@ import Head from "next/head";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Section from "@/components/Section";
 import Image from "next/image";
+import ServiceCard from "@/components/ServiceCard";
+
+import {
+  CameraOutdoorRounded,
+  UpcomingRounded,
+  SettingsRemoteRounded,
+} from "@mui/icons-material";
 
 export default function Home() {
   return (
@@ -95,10 +102,48 @@ export default function Home() {
             </Box>
           </Box>
         </Section>
-        <Section id="services" name="services">
-          <Typography component="h2" variant="h3" fontWeight="600">
-            Services
-          </Typography>
+        <Section id="services" name="services" background="primary.main">
+          <Box display="grid" gap="20px">
+            <Grid textAlign="center">
+              <Typography
+                component="h2"
+                variant="h3"
+                fontWeight="600"
+                color="#fff"
+              >
+                Nuestros servicios
+              </Typography>
+              <Typography
+                component="p"
+                fontSize="18px"
+                fontWeight="400"
+                lineHeight="2.3"
+                color="#D8D8D8"
+                sx={{ maxWidth: "800px", margin: "0 auto" }}
+              >
+                Nuestros servicios de seguridad y vigilancia protegen lo que más
+                valoras. Brindamos soluciones integrales y personalizadas para
+                tu tranquilidad las 24 horas del día.
+              </Typography>
+            </Grid>
+            <Grid
+              display="grid"
+              gridTemplateColumns={{ xs: "1fr", md: "repeat(3, 1fr)" }}
+              gap={{ xs: "15px", md: "30px" }}
+              padding={{ xs: "0 20px", sm: "0 80px" }}
+            >
+              {serviceData.map(({ title, description, Icon }) => {
+                return (
+                  <ServiceCard
+                    key={title}
+                    title={title}
+                    description={description}
+                    Icon={Icon}
+                  />
+                );
+              })}
+            </Grid>
+          </Box>
         </Section>
         <Section id="products" name="products">
           <Typography component="h2" variant="h3" fontWeight="600">
@@ -114,3 +159,24 @@ export default function Home() {
     </>
   );
 }
+
+const serviceData = [
+  {
+    title: "Cámaras",
+    description:
+      "Instalamos camaras de la mas alta calidad para nuestros clientes",
+    Icon: CameraOutdoorRounded,
+  },
+  {
+    title: "Alarmas",
+    description:
+      "Instalamos camaras de la mas alta calidad para nuestros clientes",
+    Icon: UpcomingRounded,
+  },
+  {
+    title: "Control de acceso",
+    description:
+      "Instalamos camaras de la mas alta calidad para nuestros clientes",
+    Icon: SettingsRemoteRounded,
+  },
+];

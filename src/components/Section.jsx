@@ -17,7 +17,7 @@ export default function Section({
         alignItems: "center",
         minHeight: fullHeight ? "calc(100vh)" : "400px",
         padding: "50px 0",
-        background,
+        bgcolor: background,
       }}
     >
       <Box
