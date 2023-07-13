@@ -85,7 +85,9 @@ export default function ComboCard({
           </Box>
         </Box>
         <Link href={message}>
-          <Button>Solicitar</Button>
+          <Button variant="contained" size="large">
+            Solicitar
+          </Button>
         </Link>
       </CardContent>
     </Card>
