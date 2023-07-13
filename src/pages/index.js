@@ -10,6 +10,7 @@ import {
   UpcomingRounded,
   SettingsRemoteRounded,
 } from "@mui/icons-material";
+import ComboCard from "@/components/ComboCard";
 
 export default function Home() {
   return (
@@ -121,7 +122,7 @@ export default function Home() {
             <Grid
               display="grid"
               gridTemplateColumns={{ xs: "1fr", sm: "repeat(3, 1fr)" }}
-              gap={{ xs: "15px", md: "30px" }}
+              gap={{ xs: "25px", md: "30px" }}
               padding={{ xs: "0 20px", sm: "0" }}
             >
               {serviceData.map(({ title, description, Icon }) => {
@@ -137,10 +138,47 @@ export default function Home() {
             </Grid>
           </Box>
         </Section>
-        <Section id="products" name="products">
-          <Typography component="h2" variant="h3" fontWeight="600">
-            Our Products
-          </Typography>
+        <Section id="combos" name="combos">
+          <Box display="grid" gap="40px">
+            <Grid textAlign="center" display="grid" gap="10px">
+              <Typography component="h2" variant="h3" fontWeight="600">
+                Encuentra el combo perfecto para ti
+              </Typography>
+              <Typography
+                component="p"
+                fontSize="18px"
+                fontWeight="400"
+                lineHeight="2.3"
+                color="#9A9A9A"
+                sx={{ maxWidth: "800px", margin: "0 auto" }}
+              >
+                Te ofrecemos tres combos únicos, cuidadosamente seleccionados
+                para cubrir diversas preferencias y necesidades.
+              </Typography>
+            </Grid>
+            <Grid
+              display="grid"
+              gridTemplateColumns={{ xs: "1fr", sm: "repeat(3, 1fr)" }}
+              gap={{ xs: "25px", md: "40px" }}
+              padding={{ xs: "0 20px", sm: "0" }}
+            >
+              {comboData.map(
+                ({ id, src, type, price, title, itemList, message }) => {
+                  return (
+                    <ComboCard
+                      key={id}
+                      image={src}
+                      type={type}
+                      price={price}
+                      title={title}
+                      itemList={itemList}
+                      message={message}
+                    />
+                  );
+                }
+              )}
+            </Grid>
+          </Box>
         </Section>
         <Section id="contact" name="contact">
           <Typography component="h2" variant="h3" fontWeight="600">
@@ -170,5 +208,74 @@ const serviceData = [
     description:
       "Instalamos camaras de la mas alta calidad para nuestros clientes",
     Icon: SettingsRemoteRounded,
+  },
+];
+
+const comboData = [
+  {
+    id: "basic",
+    src: "/images/combo.png",
+    type: "casa",
+    price: "$450",
+    title: "Instalación de cámaras",
+    message: "",
+    itemList: [
+      {
+        id: "camera",
+        label: "4 Cámaras HD",
+      },
+      {
+        id: "dvr",
+        label: "1 DVR",
+      },
+      {
+        id: "hdd",
+        label: "1 Disco Duro 1TB",
+      },
+    ],
+  },
+  {
+    id: "premium",
+    src: "/images/combo.png",
+    type: "oficina",
+    price: "$450",
+    title: "Instalación de cámaras",
+    message: "",
+    itemList: [
+      {
+        id: "01",
+        label: "4 Cámaras HD",
+      },
+      {
+        id: "02",
+        label: "1 DVR",
+      },
+      {
+        id: "03",
+        label: "1 Disco Duro 1TB",
+      },
+    ],
+  },
+  {
+    id: "custom",
+    src: "/images/combo.png",
+    type: "personalizado",
+    price: "$450",
+    title: "Instalación de cámaras",
+    message: "",
+    itemList: [
+      {
+        id: "04",
+        label: "4 Cámaras HD",
+      },
+      {
+        id: "05",
+        label: "1 DVR",
+      },
+      {
+        id: "06",
+        label: "1 Disco Duro 1TB",
+      },
+    ],
   },
 ];
