@@ -1,6 +1,17 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import Head from "next/head";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Section from "@/components/Section";
 import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
@@ -14,6 +25,12 @@ import {
 import ComboCard from "@/components/ComboCard";
 
 export default function Home() {
+  const [service, setService] = useState("");
+
+  const handleChangeSelect = (event) => {
+    setService(event.target.value);
+  };
+
   return (
     <>
       <Head>
@@ -222,9 +239,100 @@ export default function Home() {
           </Box>
         </Section>
         <Section id="contact" name="contact">
-          <Typography component="h2" variant="h3" fontWeight="600">
-            Contact Us
-          </Typography>
+          <Box
+            sx={{
+              display: "grid",
+              gap: "30px",
+              maxWidth: "750px",
+              padding: "80px",
+              justifySelf: "center",
+              border: "1px solid",
+              borderColor: "primary.main",
+            }}
+          >
+            <Grid display="inherit" gap="10px">
+              <Typography component="h2" variant="h3" fontWeight="600">
+                Contáctanos
+              </Typography>
+              <Typography
+                component="p"
+                fontSize="18px"
+                fontWeight="400"
+                lineHeight="2.3"
+                color="#9A9A9A"
+              >
+                Haznos saber que dudas e inquietudes tienes, estaremos
+                encantados de contestarte.
+              </Typography>
+            </Grid>
+            <FormControl
+              component="form"
+              action="https://formsubmit.co/contacto@devend.net"
+              method="POST"
+              sx={{
+                display: "grid",
+                gap: "inherit",
+              }}
+            >
+              <Grid
+                display="grid"
+                gridTemplateColumns={{ xs: "1fr", sm: "repeat(2, 1fr)" }}
+                gap="inherit"
+              >
+                <TextField
+                  fullWidth
+                  name="fullname"
+                  label="Nombres"
+                  variant="standard"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  name="phone"
+                  label="Celular"
+                  type="tel"
+                  variant="standard"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  name="email"
+                  label="Email"
+                  type="email"
+                  variant="standard"
+                  required
+                />
+                <FormControl fullWidth required>
+                  <InputLabel variant="standard" sx={{ margin: "0px" }}>
+                    Servicio
+                  </InputLabel>
+                  <Select
+                    value={service}
+                    name="service"
+                    variant="standard"
+                    onChange={handleChangeSelect}
+                  >
+                    <MenuItem value="Personalizado">Personalizado</MenuItem>
+                    <MenuItem value="Cámaras">Cámaras</MenuItem>
+                    <MenuItem value="Alarmas">Alarmas</MenuItem>
+                    <MenuItem value="Punto">Punto de acceso</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <TextField
+                required
+                fullWidth
+                minRows={2}
+                name="message"
+                multiline
+                label="Mensaje"
+                variant="standard"
+              />
+              <Button variant="contained" size="large" type="submit">
+                Enviar correo
+              </Button>
+            </FormControl>
+          </Box>
         </Section>
       </Layout>
     </>
