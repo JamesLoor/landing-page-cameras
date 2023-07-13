@@ -238,20 +238,22 @@ export default function Home() {
             </Grid>
           </Box>
         </Section>
-        <Section id="contact" name="contact">
+        <Section id="contact" name="contact" backgroundColor="#f0f0f0">
           <Box
             sx={{
               display: "grid",
               gap: "30px",
-              maxWidth: "750px",
-              padding: "80px",
+              maxWidth: "800px",
               justifySelf: "center",
-              border: "1px solid",
-              borderColor: "primary.main",
             }}
           >
             <Grid display="inherit" gap="10px">
-              <Typography component="h2" variant="h3" fontWeight="600">
+              <Typography
+                align="center"
+                component="h2"
+                variant="h3"
+                fontWeight="600"
+              >
                 Contáctanos
               </Typography>
               <Typography
@@ -260,6 +262,7 @@ export default function Home() {
                 fontWeight="400"
                 lineHeight="2.3"
                 color="#9A9A9A"
+                align="center"
               >
                 Haznos saber que dudas e inquietudes tienes, estaremos
                 encantados de contestarte.
