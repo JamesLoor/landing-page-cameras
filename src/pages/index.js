@@ -4,6 +4,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import Section from "@/components/Section";
 import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
+import TestimonialCard from "@/components/TestimonialCard";
 
 import {
   CameraOutdoorRounded,
@@ -180,6 +181,46 @@ export default function Home() {
             </Grid>
           </Box>
         </Section>
+        <Section id="testimonials" name="testimonials">
+          <Box
+            display="grid"
+            gridTemplateColumns={{ xs: "1fr", md: ".75fr 1.25fr" }}
+            alignItems="center"
+            gap={{ xs: "20px", md: "60px" }}
+          >
+            <Grid display="inherit" gap="20px">
+              <Grid display="inherit" gap="5px">
+                <Typography component="h3" variant="h6" fontWeight="500">
+                  Testimonios
+                </Typography>
+                <Typography component="h2" variant="h3" fontWeight="600">
+                  Opiniones de nuestros clientes: Su satisfacción nos respalda
+                </Typography>
+              </Grid>
+              <Typography
+                component="p"
+                fontSize="18px"
+                fontWeight="400"
+                lineHeight="2.3"
+                color="#9A9A9A"
+              >
+                Descubre lo que dicen nuestros clientes sobre nuestros servicios
+                de seguridad y vigilancia. Sus testimonios reflejan nuestro
+                compromiso con la excelencia, la confianza y la satisfacción del
+                cliente
+              </Typography>
+            </Grid>
+            <Grid
+              display="inherit"
+              gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
+              gap="40px"
+            >
+              {testimonialData.map((data) => {
+                return <TestimonialCard key={data.id} {...data} />;
+              })}
+            </Grid>
+          </Box>
+        </Section>
         <Section id="contact" name="contact">
           <Typography component="h2" variant="h3" fontWeight="600">
             Contact Us
@@ -277,5 +318,26 @@ const comboData = [
         label: "1 Disco Duro 1TB",
       },
     ],
+  },
+];
+
+const testimonialData = [
+  {
+    key: 0,
+    author: "Persona 1",
+    role: "Gerente General",
+    stars: 5,
+    imageUrl:
+      "https://avatars.dicebear.com/v2/female/2c8034027ce9bb3c3a344c7f0db34888.svg",
+    message: `“Devend es líder en seguridad y vigilancia, ofreciendo soluciones integrales y personalizadas para proteger hogares, negocios y activos valiosos. Nuestro”`,
+  },
+  {
+    key: 1,
+    author: "Persona 2",
+    role: "Gerente General",
+    stars: 5,
+    imageUrl:
+      "https://avatars.dicebear.com/v2/male/1ff492183dc51c269105f7f69c073349.svg",
+    message: `“Devend es líder en seguridad y vigilancia, ofreciendo soluciones integrales y personalizadas para proteger hogares, negocios y activos valiosos. Nuestro”`,
   },
 ];
