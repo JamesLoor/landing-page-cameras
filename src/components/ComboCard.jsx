@@ -4,8 +4,6 @@ import {
   Card,
   CardContent,
   Grid,
-  Menu,
-  MenuItem,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
@@ -18,6 +16,7 @@ export default function ComboCard({
   title,
   itemList,
   message,
+  divider,
 }) {
   return (
     <Card style={{ boxShadow: "none" }}>
@@ -30,17 +29,18 @@ export default function ComboCard({
           paddingBottom: "0 !important",
         }}
       >
-        <Box display="flex">
+        <Box display="flex" alignItems="center" overflow="hidden">
           <Image
             src={image}
             alt={title}
-            width={700}
-            height={700}
+            width={400}
+            height={400}
+            objectFit="contain"
             style={{
+              display: "block",
               width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
+              height: "300px",
+              objectFit: "contain",
             }}
           />
         </Box>
@@ -48,8 +48,8 @@ export default function ComboCard({
           <Grid
             display="grid"
             textAlign="center"
-            borderBottom="2px solid"
-            padding="0 0 25px"
+            borderBottom={divider ? "2px solid" : "none"}
+            padding={divider ? "0 0 25px" : "0"}
           >
             <Typography
               component="p"
@@ -72,7 +72,7 @@ export default function ComboCard({
             display="grid"
             gap="5px"
             margin="0"
-            padding="25px 0 0"
+            padding={divider ? "25px 0 0" : "0"}
             textAlign="center"
           >
             {itemList.map(({ id, label }) => {

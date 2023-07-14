@@ -181,7 +181,16 @@ export default function Home() {
               padding={{ xs: "0 20px", sm: "0" }}
             >
               {comboData.map(
-                ({ id, src, type, price, title, itemList, message }) => {
+                ({
+                  id,
+                  src,
+                  type,
+                  price,
+                  title,
+                  itemList,
+                  message,
+                  divider,
+                }) => {
                   return (
                     <ComboCard
                       key={id}
@@ -190,6 +199,7 @@ export default function Home() {
                       price={price}
                       title={title}
                       itemList={itemList}
+                      divider={divider}
                       message={message}
                     />
                   );
@@ -350,19 +360,19 @@ const serviceData = [
   {
     title: "Cámaras",
     description:
-      "Instalamos camaras de la mas alta calidad para nuestros clientes",
+      "Instalamos cámaras de la más alta calidad, permitiendo una vigilancia continua y precisa.",
     Icon: CameraOutdoorRounded,
   },
   {
     title: "Alarmas",
     description:
-      "Instalamos camaras de la mas alta calidad para nuestros clientes",
+      "Protección constante contra intrusiones. Están diseñadas para detectar actividad sospechosa",
     Icon: UpcomingRounded,
   },
   {
     title: "Control de acceso",
     description:
-      "Instalamos camaras de la mas alta calidad para nuestros clientes",
+      "Gestión eficiente y segura de la entrada y salida de personas en tus instalaciones.",
     Icon: SettingsRemoteRounded,
   },
 ];
@@ -370,11 +380,12 @@ const serviceData = [
 const comboData = [
   {
     id: "basic",
-    src: "/images/combo.png",
-    type: "casa",
+    src: "/images/combo-1.png",
+    type: "Basic",
     price: "$450",
     title: "Instalación de cámaras",
     message: "",
+    divider: true,
     itemList: [
       {
         id: "camera",
@@ -392,15 +403,16 @@ const comboData = [
   },
   {
     id: "premium",
-    src: "/images/combo.png",
-    type: "oficina",
-    price: "$450",
+    src: "/images/combo-2.png",
+    type: "Premium",
+    price: "$800",
     title: "Instalación de cámaras",
     message: "",
+    divider: true,
     itemList: [
       {
         id: "01",
-        label: "4 Cámaras HD",
+        label: "8 Cámaras HD",
       },
       {
         id: "02",
@@ -414,25 +426,13 @@ const comboData = [
   },
   {
     id: "custom",
-    src: "/images/combo.png",
+    src: "/images/custom.png",
     type: "personalizado",
-    price: "$450",
-    title: "Instalación de cámaras",
+    price: "$",
+    title: "Cámaras, Alarmas y Control de acceso",
     message: "",
-    itemList: [
-      {
-        id: "04",
-        label: "4 Cámaras HD",
-      },
-      {
-        id: "05",
-        label: "1 DVR",
-      },
-      {
-        id: "06",
-        label: "1 Disco Duro 1TB",
-      },
-    ],
+    divider: false,
+    itemList: [],
   },
 ];
 
