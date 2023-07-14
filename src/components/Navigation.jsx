@@ -67,7 +67,7 @@ const socialMedia = [
   {
     name: "WhatsApp",
     icon: WhatsApp,
-    link: "/",
+    link: "https://wa.me/+593963310383",
     target: "_blank",
   },
 ];
