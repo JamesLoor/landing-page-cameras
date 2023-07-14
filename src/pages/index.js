@@ -198,7 +198,11 @@ export default function Home() {
             </Grid>
           </Box>
         </Section>
-        <Section id="testimonials" name="testimonials">
+        <Section
+          id="testimonials"
+          name="testimonials"
+          backgroundColor="#f0f0f0"
+        >
           <Box
             display="grid"
             gridTemplateColumns={{ xs: "1fr", md: ".75fr 1.25fr" }}
@@ -238,7 +242,7 @@ export default function Home() {
             </Grid>
           </Box>
         </Section>
-        <Section id="contact" name="contact" backgroundColor="#f0f0f0">
+        <Section id="contact" name="contact">
           <Box
             sx={{
               display: "grid",
