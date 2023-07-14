@@ -35,9 +35,9 @@ const sections = [
     link: "/#services",
   },
   {
-    name: "products",
-    label: "Productos",
-    link: "/#products",
+    name: "combos",
+    label: "Combos",
+    link: "/#combos",
   },
   {
     name: "contact",
