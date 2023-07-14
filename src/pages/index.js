@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cameras</title>
+        <title>Devend</title>
         <meta
           name="description"
           content="Ofrecemos soluciones de seguridad a medida para hogares y empresas. Protege lo que más te importa con nuestras cámaras y alarmas de alta calidad. ¡Consulta nuestras promociones actuales!"
