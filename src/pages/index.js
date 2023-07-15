@@ -1,6 +1,9 @@
 import { useState } from "react";
-import Layout from "@/components/Layout";
 import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+
+import Layout from "@/components/Layout";
 import {
   Box,
   Button,
@@ -12,18 +15,16 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import Section from "@/components/Section";
-import Image from "next/image";
-import ServiceCard from "@/components/ServiceCard";
-import TestimonialCard from "@/components/TestimonialCard";
-
 import {
   CameraOutdoorRounded,
   UpcomingRounded,
   SettingsRemoteRounded,
 } from "@mui/icons-material";
+
+import Section from "@/components/Section";
+import ServiceCard from "@/components/ServiceCard";
+import TestimonialCard from "@/components/TestimonialCard";
 import PackageCard from "@/components/PackageCard";
-import Link from "next/link";
 
 export default function Home() {
   const [service, setService] = useState("");
@@ -388,6 +389,7 @@ export default function Home() {
                     <MenuItem value="Punto">Punto de acceso</MenuItem>
                   </Select>
                 </FormControl>
+                <input type="hidden" name="_next" value="https://devend.net" />
               </Grid>
               <TextField
                 required
