@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ComboCard({
+export default function PackageCard({
   image,
   type,
   price,

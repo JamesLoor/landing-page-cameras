@@ -22,7 +22,8 @@ import {
   UpcomingRounded,
   SettingsRemoteRounded,
 } from "@mui/icons-material";
-import ComboCard from "@/components/ComboCard";
+import PackageCard from "@/components/PackageCard";
+import Link from "next/link";
 
 export default function Home() {
   const [service, setService] = useState("");
@@ -40,29 +41,81 @@ export default function Home() {
           content="Ofrecemos soluciones de seguridad a medida para hogares y empresas. Protege lo que más te importa con nuestras cámaras y alarmas de alta calidad. ¡Consulta nuestras promociones actuales!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Section id="banner" name="banner" backgroundColor="#d9d9d9" fullHeight>
-          <Box
-            sx={{
-              display: "grid",
-              gap: "20px",
-              gridTemplateColumns: "1fr",
-            }}
+        <Section
+          id="banner"
+          name="banner"
+          boxShadow="0px -156px 93px -81px rgba(0, 0, 0, 0.10) inset"
+          fullHeight
+        >
+          <Grid
+            display="grid"
+            gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
+            alignItems="center"
+            gap={{ xs: "40px" }}
+            marginTop="78px"
           >
-            <Typography
-              component="h1"
-              variant="h2"
-              fontWeight="600"
-              maxWidth="620px"
+            <Box
+              sx={{
+                display: "grid",
+                gap: "10px",
+                gridTemplateColumns: "1fr",
+                gridAutoRows: "max-content",
+              }}
             >
-              Protegemos lo que más te importa
-            </Typography>
-            <Button variant="contained" size="large">
-              Contáctanos
-            </Button>
-          </Box>
+              <Typography
+                component="h1"
+                variant="h2"
+                fontWeight="600"
+                maxWidth="620px"
+                sx={{ fontSize: { lg: "65px" } }}
+              >
+                Protegemos lo que más te importa
+              </Typography>
+              <Typography
+                component="p"
+                variant="h5"
+                fontWeight="600"
+                maxWidth="620px"
+              >
+                Muy pronto nuevas promociones
+              </Typography>
+              <Link href="#package">
+                <Button
+                  variant="text"
+                  size="large"
+                  sx={{
+                    padding: "0",
+                    ":hover": { backgroundColor: "transparent" },
+                  }}
+                >
+                  <Typography
+                    fontSize="18px"
+                    sx={{
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Más información
+                  </Typography>
+                </Button>
+              </Link>
+            </Box>
+            <Box height={{ xs: "100%", md: "500px" }}>
+              <Image
+                src="/images/banner-2.png"
+                alt="Banner"
+                width={1280}
+                height={784.11}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  objectPosition: "center",
+                }}
+              />
+            </Box>
+          </Grid>
         </Section>
         <Section id="about-us" name="about-us">
           <Box
@@ -156,7 +209,7 @@ export default function Home() {
             </Grid>
           </Box>
         </Section>
-        <Section id="combos" name="combos">
+        <Section id="package" name="package">
           <Box display="grid" gap="40px">
             <Grid textAlign="center" display="grid" gap="10px">
               <Typography component="h2" variant="h3" fontWeight="600">
@@ -180,7 +233,7 @@ export default function Home() {
               gap={{ xs: "25px", md: "40px" }}
               padding={{ xs: "0 20px", sm: "0" }}
             >
-              {comboData.map(
+              {packageData.map(
                 ({
                   id,
                   src,
@@ -192,7 +245,7 @@ export default function Home() {
                   divider,
                 }) => {
                   return (
-                    <ComboCard
+                    <PackageCard
                       key={id}
                       image={src}
                       type={type}
@@ -377,10 +430,10 @@ const serviceData = [
   },
 ];
 
-const comboData = [
+const packageData = [
   {
     id: "basic",
-    src: "/images/combo-1.png",
+    src: "/images/package-1.png",
     type: "Basic",
     price: "$450",
     title: "Instalación de cámaras",
@@ -403,7 +456,7 @@ const comboData = [
   },
   {
     id: "premium",
-    src: "/images/combo-2.png",
+    src: "/images/package-2.png",
     type: "Premium",
     price: "$800",
     title: "Instalación de cámaras",

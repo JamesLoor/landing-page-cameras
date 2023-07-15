@@ -6,6 +6,7 @@ export default function Section({
   children,
   fullHeight = false,
   backgroundColor = "transparent",
+  ...styleProps
 }) {
   return (
     <Box
@@ -18,6 +19,7 @@ export default function Section({
         minHeight: fullHeight ? "calc(100vh)" : "400px",
         padding: "100px 0",
         bgcolor: backgroundColor,
+        ...styleProps,
       }}
     >
       <Box
