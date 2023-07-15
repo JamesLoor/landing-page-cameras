@@ -103,7 +103,7 @@ export default function Home() {
             </Box>
             <Box height={{ xs: "100%", md: "500px" }}>
               <Image
-                src="/images/banner-2.png"
+                src="/images/banner.png"
                 alt="Banner"
                 width={1280}
                 height={784.11}
