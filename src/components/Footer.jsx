@@ -11,9 +11,10 @@ import {
   DialogContent,
   DialogActions,
 } from "@mui/material";
-import { FacebookRounded, Instagram, WhatsApp } from "@mui/icons-material";
 import Link from "next/link";
 import Image from "next/image";
+import { sections } from "@/constants/sections";
+import { socialMedia } from "@/constants/socialMedia";
 
 export default function Footer({}) {
   const [termsModalOpen, setTermsModalOpen] = useState(false);
@@ -61,7 +62,7 @@ export default function Footer({}) {
 
         <Box textAlign="center">
           {sections.map(({ name, link, label }) => (
-            <Link key={name} href={link}>
+            <Link key={name} href={link} scroll={!link.includes("/#")}>
               <Button
                 component="button"
                 variant="text"
@@ -135,13 +136,13 @@ export default function Footer({}) {
         </Typography>
         <Grid display="flex" gap="5px" sx={{ placeContent: "center" }}>
           <Button
-            sx={{ color: "#FFF" }}
+            sx={{ color: "#D4D4D4" }}
             onClick={() => setTermsModalOpen(true)}
           >
             Términos y condiciones
           </Button>
           <Button
-            sx={{ color: "#FFF" }}
+            sx={{ color: "#D4D4D4" }}
             onClick={() => setPolicyModalOpen(true)}
           >
             Políticas de privacidad
@@ -293,58 +294,3 @@ const policy = {
   ],
   date: "Fecha de la última actualización: 28/05/2023",
 };
-
-const sections = [
-  {
-    name: "home",
-    label: "Inicio",
-    link: "/",
-  },
-  {
-    name: "about",
-    label: "Nosotros",
-    link: "/#about-us",
-  },
-  {
-    name: "services",
-    label: "Servicios",
-    link: "/#services",
-  },
-  {
-    name: "combos",
-    label: "Combos",
-    link: "/#combos",
-  },
-  {
-    name: "contact",
-    label: "Contacto",
-    link: "/#contact",
-  },
-];
-
-const socialMedia = [
-  {
-    name: "Facebook",
-    icon: FacebookRounded,
-    link: "https://www.facebook.com/devend.seguridad",
-    target: "_blank",
-  },
-  {
-    name: "Instagram",
-    icon: Instagram,
-    link: "https://www.instagram.com/devend.seguridad/",
-    target: "_blank",
-  },
-  {
-    name: "TikTok",
-    iconSource: "/icons/tiktok.svg",
-    link: "https://www.tiktok.com/@devend.seguridad",
-    target: "_blank",
-  },
-  {
-    name: "WhatsApp",
-    icon: WhatsApp,
-    link: "https://wa.me/+593963310383",
-    target: "_blank",
-  },
-];

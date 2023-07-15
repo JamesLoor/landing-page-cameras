@@ -17,60 +17,8 @@ import {
 } from "@mui/icons-material";
 import Link from "next/link";
 import Image from "next/image";
-
-const sections = [
-  {
-    name: "home",
-    label: "Inicio",
-    link: "/",
-  },
-  {
-    name: "about",
-    label: "Nosotros",
-    link: "/#about-us",
-  },
-  {
-    name: "services",
-    label: "Servicios",
-    link: "/#services",
-  },
-  {
-    name: "combos",
-    label: "Combos",
-    link: "/#combos",
-  },
-  {
-    name: "contact",
-    label: "Contacto",
-    link: "/#contact",
-  },
-];
-const socialMedia = [
-  {
-    name: "Facebook",
-    icon: FacebookRounded,
-    link: "https://www.facebook.com/devend.seguridad",
-    target: "_blank",
-  },
-  {
-    name: "Instagram",
-    icon: Instagram,
-    link: "https://www.instagram.com/devend.seguridad/",
-    target: "_blank",
-  },
-  {
-    name: "TikTok",
-    iconSource: "/icons/tiktok.svg",
-    link: "https://www.tiktok.com/@devend.seguridad",
-    target: "_blank",
-  },
-  {
-    name: "WhatsApp",
-    icon: WhatsApp,
-    link: "https://wa.me/+593963310383",
-    target: "_blank",
-  },
-];
+import { sections } from "@/constants/sections";
+import { socialMedia } from "@/constants/socialMedia";
 
 export default function Navigation() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -146,6 +94,7 @@ export default function Navigation() {
                   >
                     <Link
                       href={link}
+                      scroll={!link.includes("/#")}
                       style={{
                         color: "white",
                         padding: "6px 16px",
@@ -170,7 +119,7 @@ export default function Navigation() {
 
             <Box sx={{ display: { xs: "none", md: "flex" } }} gap="15px">
               {sections.map(({ name, link, label }) => (
-                <Link key={name} href={link}>
+                <Link key={name} href={link} scroll={!link.includes("/#")}>
                   <Button
                     key={name}
                     size="large"
