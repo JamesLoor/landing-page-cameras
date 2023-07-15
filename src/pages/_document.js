@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import PropTypes from "prop-types";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import theme from "@/utils/theme";
 import createEmotionCache from "@/utils/createEmotionCache";
+import { FB_PIXEL_ID } from "@/utils/fpixel";
 
 export default function MyDocument(props) {
   const { emotionStyleTags } = props;
@@ -11,7 +13,15 @@ export default function MyDocument(props) {
   return (
     <Html lang="en" style={{ scrollBehavior: "smooth" }}>
       <Head>
-        {/* PWA primary color */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            alt="facebook-pixel"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta name="emotion-insertion-point" content="" />
