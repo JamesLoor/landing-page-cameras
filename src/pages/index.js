@@ -147,9 +147,11 @@ export default function Home() {
                 capacitados tiene amplia experiencia en la instalación y
                 mantenimiento de sistemas de seguridad avanzados.
               </Typography>
-              <Button variant="contained" size="large">
-                Contáctanos
-              </Button>
+              <Link href="#contact" scroll={false}>
+                <Button variant="contained" size="large">
+                  Contáctanos
+                </Button>
+              </Link>
             </Grid>
             <Box height={{ xs: "100%", md: "500px", border: "2px solid #000" }}>
               <Image
@@ -439,7 +441,8 @@ const packageData = [
     type: "Basic",
     price: "$450",
     title: "Instalación de cámaras",
-    message: "",
+    message:
+      "Hola, necesito mas información sobre el paquete basico de instalación de cámaras",
     divider: true,
     itemList: [
       {
@@ -462,7 +465,8 @@ const packageData = [
     type: "Premium",
     price: "$800",
     title: "Instalación de cámaras",
-    message: "",
+    message:
+      "Hola, necesito mas información sobre el paquete Premium de instalación de cámaras",
     divider: true,
     itemList: [
       {
@@ -485,7 +489,8 @@ const packageData = [
     type: "personalizado",
     price: "$",
     title: "Cámaras, Alarmas y Control de acceso",
-    message: "",
+    message:
+      "Hola, estoy interesado en un paquete personalizado, me gustaría que me contactaran para recibir más información",
     divider: false,
     itemList: [],
   },

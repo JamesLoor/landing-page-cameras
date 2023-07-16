@@ -84,7 +84,10 @@ export default function PackageCard({
             })}
           </Box>
         </Box>
-        <Link href={message}>
+        <Link
+          target="_blank"
+          href={`https://wa.me/+593963310383?text=${encodeURI(message)}`}
+        >
           <Button variant="contained" size="large">
             Solicitar
           </Button>
