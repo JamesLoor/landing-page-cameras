@@ -494,20 +494,20 @@ const packageData = [
 const testimonialData = [
   {
     key: 0,
-    author: "Persona 1",
+    author: "Hernán Castaño",
     role: "Gerente General",
     stars: 5,
-    imageUrl:
-      "https://avatars.dicebear.com/v2/female/2c8034027ce9bb3c3a344c7f0db34888.svg",
-    message: `“Devend es líder en seguridad y vigilancia, ofreciendo soluciones integrales y personalizadas para proteger hogares, negocios y activos valiosos. Nuestro”`,
+    // imageUrl:
+    // "https://avatars.dicebear.com/v2/female/2c8034027ce9bb3c3a344c7f0db34888.svg",
+    message: `“Estoy muy satisfecho con la instalación de las cámaras en mi bodega. Ahora, ya puedo estar tranquilo desde mi casa porque sé que tengo los ojos puestos en mi negocio todo el tiempo. Los muchachos de Devend son muy juiciosos y se toman el trabajo en serio.”`,
   },
   {
     key: 1,
-    author: "Persona 2",
-    role: "Gerente General",
+    author: "María Fernanda",
+    role: "Dueña",
     stars: 5,
-    imageUrl:
-      "https://avatars.dicebear.com/v2/male/1ff492183dc51c269105f7f69c073349.svg",
-    message: `“Devend es líder en seguridad y vigilancia, ofreciendo soluciones integrales y personalizadas para proteger hogares, negocios y activos valiosos. Nuestro”`,
+    // imageUrl:
+    //   "https://avatars.dicebear.com/v2/male/1ff492183dc51c269105f7f69c073349.svg",
+    message: `“Excelente experiencia con Devend. Nos instalaron 6 cámaras de seguridad en nuestra tienda, incluyendo alarmas y control de acceso. Todo funciona a la perfección, y la tranquilidad que nos da es invaluable.”`,
   },
 ];
